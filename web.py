@@ -32,7 +32,6 @@ def download_video(url, only_audio=False, resolusi="720p"):
 
     ydl_opts = {
         'outtmpl': 'downloads/%(title)s.%(ext)s',
-        'ffmpeg_location': './', 
         'progress_hooks': [hook], # Memasang animasi bar
     }
 
