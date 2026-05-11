@@ -32,7 +32,13 @@ def download_video(url, only_audio=False, resolusi="720p"):
 
     ydl_opts = {
         'outtmpl': 'downloads/%(title)s.%(ext)s',
-        'progress_hooks': [hook], # Memasang animasi bar
+        'progress_hooks': [hook],
+        # Tambahkan baris di bawah ini untuk "menyamar" jadi browser Chrome
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'referer': 'https://www.google.com/',
+        'nocheckcertificate': True,
+        'quiet': True,
+        'no_warnings': True,
     }
 
     if only_audio:
